@@ -285,10 +285,10 @@ class EBayEnterpriseAffiliateNetworkTest < Test::Unit::TestCase
 
   def check_results(response)
     assert_instance_of(RecursiveOpenStruct, response.meta)
-    assert_instance_of(Fixnum, response.meta.status.code)
+    assert_instance_of(Integer, response.meta.status.code)
     assert_instance_of(String, response.meta.status.message)
-    assert_instance_of(Fixnum, response.meta.pagination.total_results)
-    assert_instance_of(Fixnum, response.meta.pagination.total_pages)
+    assert_instance_of(Integer, response.meta.pagination.total_results)
+    assert_instance_of(Integer, response.meta.pagination.total_pages)
     assert_instance_of(Array, response.data)
 
     response.data.each do |item|

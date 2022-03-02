@@ -32,13 +32,13 @@ module EBayEnterpriseAffiliateNetwork
   end
 
   def self.api_version=(version)
-    raise ArgumentError, "Version must be a Fixnum (YYYYMMDD format); got #{version.class} instead." unless version.is_a? Fixnum
+    raise ArgumentError, "Version must be a Fixnum (YYYYMMDD format); got #{version.class} instead." unless version.is_a? Integer
     raise ArgumentError, "Please provide the version of the API Key." unless version > 0
     @api_version = version
   end
 
   def self.api_timeout=(timeout)
-    raise ArgumentError, "Timeout must be a Fixnum; got #{timeout.class} instead" unless timeout.is_a? Fixnum
+    raise ArgumentError, "Timeout must be a Fixnum; got #{timeout.class} instead" unless timeout.is_a? Integer
     raise ArgumentError, "Timeout must be > 0; got #{timeout} instead" unless timeout > 0
     @api_timeout = timeout
   end
